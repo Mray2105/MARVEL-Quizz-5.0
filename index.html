@@ -48,21 +48,27 @@
     <div class="container">
         <div class="item" id="s1">
             <img src="Orangener.png" alt="Infinity Stein 1" width="200px" height="150px">
+            <p class="assigned-term"></p>
         </div>
         <div class="item" id="s2">
             <img src="Lilaner.png" alt="Infinity Stein 2" width="200px" height="150px">
+            <p class="assigned-term"></p>
         </div>
         <div class="item" id="s3">
             <img src="Grüner.png" alt="Infinity Stein 3" width="200px" height="150px">
+            <p class="assigned-term"></p>
         </div>
         <div class="item" id="s4">
             <img src="Blauer.png" alt="Infinity Stein 4" width="200px" height="150px">
+            <p class="assigned-term"></p>
         </div>
         <div class="item" id="s5">
             <img src="Roter.png" alt="Infinity Stein 5" width="200px" height="150px">
+            <p class="assigned-term"></p>
         </div>
         <div class="item" id="s6">
             <img src="Gelber.png" alt="Infinity Stein 6" width="200px" height="150px">
+            <p class="assigned-term"></p>
         </div>
     </div>
     <div class="terms">
@@ -80,8 +86,8 @@
             term.addEventListener('click', () => {
                 // Begriff zum zuletzt ausgewählten Bild hinzufügen
                 const selectedImage = document.querySelector('.selected-image');
-                if (selectedImage) {
-                    selectedImage.innerHTML = term.innerHTML;
+                if (selectedImage && !selectedImage.querySelector('.assigned-term').textContent) {
+                    selectedImage.querySelector('.assigned-term').textContent = term.textContent;
                 }
             });
         });
